@@ -1,9 +1,9 @@
 import pandas as pd
-from datetme import datetime
+from datetime import datetime
 import requests
-import numpy as numpy
+import numpy as np
 
-url = 'https://margincalculator.angelbroking.com/OpenAPI_File/files/OpenAPIScripMaster.json'
+url = https://margincalculator.angelbroking.com/OpenAPI_File/files/OpenAPIScripMaster.json
 d = requests.get(url).json()
 
 token_df = pd.DataFrame.from_dict(d)
