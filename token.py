@@ -3,7 +3,7 @@ from datetme import datetime
 import requests
 import numpy as numpy
 
-url = https://margincalculator.angelbroking.com/OpenAPI_File/files/OpenAPIScripMaster.json
+url = 'https://margincalculator.angelbroking.com/OpenAPI_File/files/OpenAPIScripMaster.json'
 d = requests.get(url).json()
 
 token_df = pd.DataFrame.from_dict(d)
