@@ -18,6 +18,8 @@ print(userProfile)
 
 ############################ End of Session Block #############
 
+############################ OHLC Block #############
+
 def OHLCHistory(symbol,token,interval,fdate,todate):
     try:
         historicParam={       
@@ -41,3 +43,11 @@ def OHLCHistory(symbol,token,interval,fdate,todate):
         return history
     except Exception as e:
         print("API failed: {}".format(e))
+
+minute5data = OHLCHistory("SBIN-EQ", "3045", "FIVE_MINUTE", "2021-06-03 00:00", "2021-06-04 15:30")
+print("5 minute data Live:")
+my_df = pd.DataFrame(minute5data)
+print(my_df)
+
+   
+############################ End of OHLC Block #############
