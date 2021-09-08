@@ -1,4 +1,4 @@
-from smartapi.SmartConnect import SmartConnect
+from smartapi import SmartConnect #from smartapi.SmartConnect import SmartConnect
 import pandas as pd
 import requests
 import login as l
@@ -54,7 +54,7 @@ print(my_df)
   
 ############################ Order Placement Block #############
 
-  def place_order(symbol,token,qty,exch_seg,buy_sell,ordertype,price):
+def place_order(symbol,token,qty,exch_seg,buy_sell,ordertype,price):
       try:
           orderparams = {
               "variety":"NORMAL",
