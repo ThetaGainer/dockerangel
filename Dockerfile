@@ -25,6 +25,7 @@ RUN \
 FROM essentials as angelsetup
 RUN \
     pip3 install smartapi-python \
+    pip install pandas \
     pip install websocket-client
 
 ###Oh My Zsh
