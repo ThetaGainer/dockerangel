@@ -50,9 +50,9 @@ my_df = pd.DataFrame(minute5data)
 print(my_df)
 
    
-  ############################ End of OHLC Block #############
+############################ End of OHLC Block #############
   
-  ############################ Order Placement Block #############
+############################ Order Placement Block #############
 
   def place_order(symbol,token,qty,exch_seg,buy_sell,ordertype,price):
       try:
