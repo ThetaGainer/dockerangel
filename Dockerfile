@@ -34,5 +34,8 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 RUN mkdir angel && cd angel
 RUN wget https://github.com/ThetaGainer/dockerangel/blob/main/corecode.py
 
+## Cleaning
+RUN	apt-get clean && rm -rf /var/lib/apt/lists/*
+
 ## Last command
 ENTRYPOINT /bin/zsh
