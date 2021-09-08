@@ -35,6 +35,7 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 RUN mkdir -p /root/angel
 WORKDIR /root/angel/
 RUN git clone https://github.com/ThetaGainer/dockerangel
+WORKDIR /root/angel/dockerangel/
 
 ## Last command
 ENTRYPOINT /bin/zsh
