@@ -34,8 +34,7 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 ### Angel Code here
 RUN mkdir -p /root/angel
 WORKDIR /root/angel/
-RUN wget https://raw.githubusercontent.com/ThetaGainer/dockerangel/main/corecode.py
-RUN wget https://raw.githubusercontent.com/ThetaGainer/dockerangel/main/token.py
+RUN git clone https://github.com/ThetaGainer/dockerangel
 
 ## Last command
 ENTRYPOINT /bin/zsh
