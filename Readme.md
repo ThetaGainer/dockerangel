@@ -7,7 +7,7 @@ wget https://raw.githubusercontent.com/ThetaGainer/dockerangel/main/Dockerfile &
 
 Step2: Run the docker container:
 ```
-docker container run --rm -i -t --name angelalgo angel
+docker container run --rm -i -t --net=host --name angelalgo angel
 ```
 
 Step 3: Run the code
