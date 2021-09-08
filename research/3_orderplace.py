@@ -43,6 +43,12 @@ def OHLCHistory(symbol,token,interval,fdate,todate):
         return history
     except Exception as e:
         print("API failed: {}".format(e))
+
+minute5data = OHLCHistory("SBIN-EQ", "3045", "FIVE_MINUTE", "2021-06-03 00:00", "2021-06-04 15:30")
+print("5 minute data Live:")
+my_df = pd.DataFrame(minute5data)
+print(my_df)
+
    
   ############################ End of OHLC Block #############
   
@@ -68,4 +74,8 @@ def OHLCHistory(symbol,token,interval,fdate,todate):
             print("The order id is: {}".format(orderId))
         except Exception as e:
             print("Order placement failed: {}".format(e))              
-  ############################ Endo of Order Placement Block #############
+
+print(place_order("SBIN-EQ", "3045",1,'NSE','BUY','MARKET,0'))
+print("End Program")
+
+############################ Endo of Order Placement Block #############
