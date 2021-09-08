@@ -1,4 +1,4 @@
-from smartapi.SmartConnect import SmartConnect
+from smartapi import SmartConnect #from smartapi.SmartConnect import SmartConnect
 import pandas as pd
 import requests
 import login as l
