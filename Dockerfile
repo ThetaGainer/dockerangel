@@ -37,5 +37,7 @@ WORKDIR /root/angel/
 RUN git clone https://github.com/ThetaGainer/dockerangel
 WORKDIR /root/angel/dockerangel/research/
 
+EXPOSE 587/tcp
+
 ## Last command
 ENTRYPOINT /bin/zsh
