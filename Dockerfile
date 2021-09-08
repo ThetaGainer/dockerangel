@@ -31,11 +31,9 @@ RUN \
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ### Angel Code here
-RUN mkdir angel && cd angel
-RUN wget https://github.com/ThetaGainer/dockerangel/blob/main/corecode.py
-
-## Cleaning
-RUN	apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN mkdir -p /root/angel
+WORKDIR /root/angel/
+RUN wget https://raw.githubusercontent.com/ThetaGainer/dockerangel/main/corecode.py
 
 ## Last command
 ENTRYPOINT /bin/zsh
