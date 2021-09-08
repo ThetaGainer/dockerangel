@@ -3,6 +3,7 @@ import pandas as pd
 import requests
 import login as l
 
+############################ Session Block #############
 #login api call
 obj=SmartConnect(api_key=l.api_key)
 data = obj.generateSession(l.user_name,l.password)
@@ -14,3 +15,5 @@ l.feed_token = feedToken
 #fetch User Profile
 userProfile=obj.getProfile(refreshToken)
 print(userProfile)
+
+############################ End of Session Block #############
