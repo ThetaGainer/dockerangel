@@ -4,7 +4,7 @@
 FROM debian:latest as base
 
 ## Update
-#RUN apt-get update -y
+RUN apt-get update -y
 
 # Image - essentials Image
 FROM base as essentials
