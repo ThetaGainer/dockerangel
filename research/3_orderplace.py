@@ -1,4 +1,4 @@
-from smartapi import SmartConnect #from smartapi.SmartConnect import SmartConnect
+from smartapi.SmartConnect import SmartConnect
 import pandas as pd
 import requests
 import login as l
@@ -55,8 +55,8 @@ print(my_df)
 ############################ Order Placement Block #############
 
 def place_order(symbol,token,qty,exch_seg,buy_sell,ordertype,price):
-      try:
-          orderparams = {
+    try:
+        orderparams = {
               "variety":"NORMAL",
               "tradingsymbol":symbol,
               "symboltoken":token,
@@ -70,10 +70,10 @@ def place_order(symbol,token,qty,exch_seg,buy_sell,ordertype,price):
               "stoploss":"0",
               "quantity":qty
               }
-            orderId=obj.placeOrder(orderparams)
-            print("The order id is: {}".format(orderId))
-        except Exception as e:
-            print("Order placement failed: {}".format(e))              
+        orderId=obj.placeOrder(orderparams)
+        print("The order id is: {}".format(orderId))
+    except Exception as e:
+        print("Order placement failed: {}".format(e))              
 
 print(place_order("SBIN-EQ", "3045",1,'NSE','BUY','MARKET,0'))
 print("End Program")
