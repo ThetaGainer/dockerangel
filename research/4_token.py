@@ -51,7 +51,7 @@ stocks = ['SBIN', 'SRF', 'TATAMOTORS']
 intializeSymbolTokenMap()
 
 for ticker in stocks:
-    tokendetails = getTokenInfo(ticket,'NSE').iloc[0]
+    tokendetails = getTokenInfo(ticker,'NSE').iloc[0]
     symbol = tokendetails['symbol']
     token = tokendetails['symbol']
     Dailydata[ticker] = OHLCHistory(str(symbol),str(token), "ONE_DAY", "2021-02-08 00:00", "2021-06-05 00:00")
