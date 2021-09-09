@@ -32,14 +32,39 @@ def intializeSymbolTokenMap():
     token_df['expiry'] = pd.to_datetime(token_df['expiry'])
     token_df = token_df.astype({'strike': float})
     l.token_map = token_df
+    print("In Initialze TokenInfo")
     print(token_df)
+
+def getTokenInfo (symbol, exch_seg ='NSE'):
+    df = l.token_map
+    print(df)
+    if exch_seg == 'NSE':
+        eq_df = df[(df['exch_seg'] == 'NSE') & (df['symbol'].str.contains('EQ')) ]
+        print("In Get TokenInfo")
+        print(eq_df)
+        return eq_df[eq_df['name'] ==symbol]
+
+print ("Starting...")
+
+stocks = ['SBIN', 'SRF', 'TATAMOTORS']
+
+intializeSymbolTokenMap()
+
+for ticker in stocks:
+    tokendetails = getTokenInfo(ticket,'NSE').iloc[0]
+    symbol = tokendetails['symbol']
+    token = tokendetails['symbol']
+    Dailydata[ticker] = OHLCHistory(str(symbol),str(token), "ONE_DAY", "2021-02-08 00:00", "2021-06-05 00:00")
+
+print("End of Algo")
+
 
 ############################ End of Symbol Mapping Block #############
 
 
 
 ############################ OHLC Block #############
-"""
+
 def OHLCHistory(symbol,token,interval,fdate,todate):
     try:
         historicParam={       
@@ -69,7 +94,7 @@ print("5 minute data Live:")
 my_df = pd.DataFrame(minute5data)
 print(my_df)
 
-"""   
+
 ############################ End of OHLC Block #############
   
 ############################ Order Placement Block #############
