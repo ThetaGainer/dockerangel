@@ -1,13 +1,8 @@
 ## AngelAlgo Docker Guide
 
-Step1: Build the docker image:
+Step1: Build the docker image and run the container:
 ```
-wget https://raw.githubusercontent.com/ThetaGainer/dockerangel/main/Dockerfile && docker build -t angel .
-```
-
-Step2: Run the docker container:
-```
-docker container run --rm -i -t --net=host --name angelalgo angel
+wget https://raw.githubusercontent.com/ThetaGainer/dockerangel/main/Dockerfile && docker build -t angel . && docker container run --rm -i -t --net=host --name angelalgo angel
 ```
 
 Step 3: Run the code
