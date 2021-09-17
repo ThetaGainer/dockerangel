@@ -26,7 +26,8 @@ FROM essentials as angelsetup
 RUN \
     pip3 install smartapi-python \
     pip install pandas \
-    pip install websocket-client
+    pip install websocket-client \
+    pip install --user pipenv
 
 ###Oh My Zsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
