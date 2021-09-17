@@ -39,3 +39,13 @@
     STATUS_COMPLETE = "COMPLETE"
     STATUS_REJECTED = "REJECTED"
     STATUS_CANCELLED = "CANCELLED"
+    
+    # Time Frame
+    ONE_MINUTE	1 Minute
+    THREE_MINUTE	3 Minute
+    FIVE_MINUTE	5 Minute
+    TEN_MINUTE	10 Minute
+    FIFTEEN_MINUTE	15 Minute
+    THIRTY_MINUTE	30 Minute
+    ONE_HOUR	1 Hour
+    ONE_DAY 1 Day
