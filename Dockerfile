@@ -21,15 +21,15 @@ RUN \
     pip \
     nano
 
+###Oh My Zsh
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # Image - tools Image
 FROM essentials as angelsetup
 RUN \
     pip3 install smartapi-python \
     pip install pandas \
     pip install websocket-client    
-
-###Oh My Zsh
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 ### Angel Code here
 RUN mkdir -p /root/angel
