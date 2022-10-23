@@ -1,22 +1,5 @@
-from smartapi import SmartConnect #from smartapi.SmartConnect import SmartConnect
+from parent import *
 import pandas as pd
-import requests
-import login as l
-
-############################ Session Block #############
-#login api call
-obj=SmartConnect(api_key=l.api_key)
-data = obj.generateSession(l.user_name,l.password)
-refreshToken= data['data']['refreshToken']
-
-#fetch the feedtoken
-feedToken=obj.getfeedToken()
-l.feed_token = feedToken
-#fetch User Profile
-userProfile=obj.getProfile(refreshToken)
-print(userProfile)
-
-############################ End of Session Block #############
 
 ############################ OHLC Block #############
 
@@ -44,7 +27,7 @@ def OHLCHistory(symbol,token,interval,fdate,todate):
     except Exception as e:
         print("API failed: {}".format(e))
 
-minute5data = OHLCHistory("SBIN-EQ", "3045", "FIVE_MINUTE", "2021-09-17 00:00", "2021-09-17 15:30")
+minute5data = OHLCHistory("SBIN-EQ", "3045", "FIVE_MINUTE", "2022-10-17 00:00", "2022-10-17 15:30")
 print("5 minute data Live:")
 my_df = pd.DataFrame(minute5data)
 print(my_df)
