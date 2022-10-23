@@ -1,19 +1,19 @@
 import smtplib
+from login import *
 
-gmail_user = ''
-gmail_password = ''
-r_user = ''
+gmail_user = 'sender email'
+gmail_password = 'sender pwd'
+r_user = 'receiver email'
 
 sent_from = gmail_user
 to = [r_user]
-subject = 'BOT Alert'
+subject = 'UAT Test'
 body = 'Hey, whats up'
 
 email_text = """\
 From: %s
 To: %s
 Subject: %s
-
 %s
 """ % (sent_from, ", ".join(to), subject, body)
 
