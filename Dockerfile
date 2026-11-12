@@ -11,15 +11,18 @@ FROM base as essentials
 
 ## Install essential packages
 RUN \
+    apt-get update && \
     apt-get install -y --no-install-recommends \
     git \
     zsh \
     curl \
     vim \
     wget \
-    python \
-    pip \
-    nano
+    python3 \
+    python3-pip \
+    python-is-python3 \
+    nano && \
+    rm -rf /var/lib/apt/lists/*
 
 ###Oh My Zsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
